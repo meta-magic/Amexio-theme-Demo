@@ -1010,10 +1010,13 @@
 
 .datagrid-template{
   display: inline;
-  span{
-    padding-left: 3px;
-  }
+
 }
+
+.datagrid-template .span{
+    padding-left: 3px;
+}
+
 @media only screen and (max-width: 500px) {
 
   .datagrid-template span{
