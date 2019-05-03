@@ -1,0 +1,204 @@
+<amexio-form [form-name] = "'sampleForm'" [header]="true" [show-error]="true" [height] = "'600'">
+  <amexio-form-header>
+    Sample Form
+  </amexio-form-header>
+  <amexio-form-body>
+    <amexio-row>
+      <amexio-column [size]="6">
+        <amexio-text-input [field-label]="'Name'" name="country"
+                           [place-holder]="'Enter name'"
+                           [enable-popover]="true"
+                           [icon-feedback]="true"
+                           [allow-blank]="false" [error-msg]="'Please enter name'"
+                           [min-length]="3" [max-length]="15" [min-error-msg]="'Name should be minimum 3 characters'"
+                           [max-error-msg]="'Name should be less than 15 characters'"
+        >
+        </amexio-text-input>
+      </amexio-column>
+      <amexio-column [size]="6">
+        <amexio-text-input [field-label]="'Surname'" name="name"
+                           [place-holder]="'Enter surname'"
+                           [enable-popover]="true"
+                           [icon-feedback]="true"
+                           [allow-blank]="false" [error-msg]="'Please enter Surname'"
+                           [min-length]="3" [max-length]="15" [min-error-msg]="'Surname should be minimum 3 characters'"
+                           [max-error-msg]="'Surname should be less than 15 characters'"
+        >
+        </amexio-text-input>
+      </amexio-column>
+    </amexio-row>
+    <amexio-row>
+      <amexio-column [size]="6">
+        <amexio-textarea-input [field-label]="'Address'" name="Address"
+                               [place-holder]="'Enter address'"
+                               [error-msg]="'Please enter address'"
+                               [icon-feedback]="true"
+                               [rows]="'1'" [columns]="'2'"
+                               [allow-blank]="false" [enable-popover]="true"
+
+        >
+        </amexio-textarea-input>
+      </amexio-column>
+      <amexio-column [size]="6">
+        <amexio-typeahead [data-reader]="'response.data'"
+                          [http-url]="'assets/data/country.json'"
+                          [http-method]="'get'"
+                          [allow-blank] = "false"
+                          [key]="'countryName'"
+                          [display-field]="'countryName'"
+                          [field-label]="'Nationality'" [place-holder]="'Search'">
+        </amexio-typeahead>
+      </amexio-column>
+    </amexio-row>
+
+    <amexio-row>
+      <amexio-column [size]="6">
+
+        <amexio-date-time-picker
+          [field-label]="'Date Of Birth'"
+          [time-picker]="false"
+          [date-picker]="true"
+          [min-date]="'22-Mar-2016'" 
+          [max-date]="'22-Feb-2020'"
+          [disabled-date]="disabledDate"
+          [required] = "true"
+          [(ngModel)]="currentDate">
+        </amexio-date-time-picker>
+
+      </amexio-column>
+      <amexio-column [size]="6">
+        <amexio-date-time-picker
+          [field-label]="'Time Of Birth'"
+          [time-picker]="true"
+          [date-picker]="false"
+          [ngModel]="time">
+        </amexio-date-time-picker>
+      </amexio-column>
+    </amexio-row>
+    <amexio-row>
+      <amexio-column [size]="6">
+        <amexio-number-input [field-label]="'Age'" name ="age"
+                             [place-holder]="'Enter Age'">
+        </amexio-number-input>
+      </amexio-column>
+      <amexio-column [size]="6">
+                  <amexio-dropdown
+                                 [(ngModel)]="country"
+                                 [place-holder]="'Choose City'"
+                                 name="country"
+                                 [data-reader]="'response.data'"
+                                 [field-label]="'City'"
+                                 [http-url]="'assets/data/cities.json'"
+                                 [http-method]="'get'"
+                                 [search]="'true'"
+                                 [allow-blank] = "false"
+                                 [display-field]="'cityName'"
+                                 [value-field]="'cityName'"
+                                 >
+                </amexio-dropdown>
+      </amexio-column>
+    </amexio-row>
+    <amexio-row>
+      <amexio-column [size]="6">
+        <amexio-email-input [field-label]="'Email'" name="email"
+                            [place-holder]="'Enter mail id'"
+                            [enable-popover]="true"
+                            [icon-feedback]="true"
+                            [allow-blank]="false" [error-msg]="'Please enter correct mail id'">
+        </amexio-email-input>
+      </amexio-column>
+      <amexio-column [size]="6">
+        <amexio-password-input [field-label]="'Password'" name="password"
+                               [place-holder]="'Enter Password'"
+                               [allow-blank]="false"
+                               [error-msg]="'Please enter password'"
+                               [min-length]="6"
+                               [min-error-msg]="'Minimum 6 char required'"
+                               [max-length]="32"
+                               [max-error-msg]="'Maximum 32 char allowed'"
+                               [enable-popover]="true">
+        </amexio-password-input>
+      </amexio-column>
+    </amexio-row>
+    <amexio-row>
+      <amexio-column [size]="6">
+        <amexio-checkbox-group
+          [field-label]="'Hobbies'" name="language"
+          [horizontal]="true"
+          [required] = "true"
+          [data-reader]="'response.data'"
+          [display-field]="'language'"
+          [value-field]="'checked'"
+          [data]="checkboxGroupdata">
+        </amexio-checkbox-group>
+      </amexio-column>
+      <amexio-column [size]="6">
+        <amexio-radio-group
+          name="name"
+          [field-label] = "'Gender'"
+          [horizontal]="true"
+          [allow-blank] = "false"
+          [data-reader]="'response.data'"
+          [display-field]="'gender'"
+          [value-field]="'genderId'"
+          [data]="radioGroupData"
+          >
+        </amexio-radio-group>
+      </amexio-column>
+    </amexio-row>
+    <amexio-row>
+      <amexio-column [size]="6">
+      <amexio-slider [(ngModel)]="name" minvalue="0" maxvalue="100" stepvalue="10"></amexio-slider>
+      </amexio-column>
+      <amexio-column [size]="6">
+      <amexio-fileupload [http-url]="'/upload'"
+        [http-method]="'POST'"
+        [file-type]="'image/*'"
+        [multiple-file]="'*'"
+        [droppable]="true"
+        [field-label]="'Photo Upload'">
+      </amexio-fileupload>
+    </amexio-column>
+    </amexio-row>
+    <amexio-row>
+      <amexio-column [size]="6">
+        <amexio-tag-input [data-reader]="'response.data'"
+                          [http-url]="'assets/data/country.json'"
+                          [http-method]="'get'"
+                          [key]="'countryName'"
+                          [allow-blank]="false"
+                          [display-field]="'countryName'"
+                          [field-label]="'Having visa'">
+        </amexio-tag-input>
+      </amexio-column>
+      <amexio-column [size]="6">
+        <amexio-rating-input [field-label]="'Credit rating'"  [(ngModel)]="rate" [max]="10" name="rate"></amexio-rating-input>
+      </amexio-column>
+    </amexio-row>
+
+    <amexio-row>
+      <amexio-column [size]="12">
+      <amexio-item-selector [height]="200" [display-field]="'countryName'"
+                            [value-field]="'countryId'"
+                            [http-url]="'assets/data/itemdata.json'"
+                            [http-method]="'get'" [data-reader]="'data'" >
+      </amexio-item-selector>
+      </amexio-column>
+    </amexio-row>
+  </amexio-form-body>
+  <amexio-form-action>
+      <amexio-btn-group>
+        <amexio-button [label]="'OK'"
+                       [type]="'theme-color'"
+                       [tooltip]="'OK'"
+                       [disabled]="'true'"
+                       [form-bind]="'sampleForm'">
+        </amexio-button>
+        <amexio-button [label]="'Cancel'"
+                       [type]="'theme-color'"
+                       [tooltip]="'Cancel'">
+        </amexio-button>
+      </amexio-btn-group>
+  </amexio-form-action>
+</amexio-form>
+

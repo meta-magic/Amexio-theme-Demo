@@ -1,0 +1,128 @@
+<amexio-row>
+  <amexio-column [size] = "6">
+     <amexio-card [footer]="false" [show]="true" [header] = "true">
+        <amexio-header>
+          Issue Status
+        </amexio-header>
+        <amexio-body>
+          <table width="100%">
+            <tr>
+              <td width="15%">Open</td>
+              <td align="left">
+                <amexio-progress-bar [show]="true"
+                type="success"
+                                     [infinite]="false"
+                                     [current-value]="70">
+                </amexio-progress-bar>
+              </td>
+            </tr>
+            <tr>
+              <td width="15%">Close</td>
+              <td align="left">
+                 <amexio-progress-bar [show]="true"
+                                     [infinite]="false"
+                                     type="success"
+                                     [current-value]="20">
+                </amexio-progress-bar>
+              </td>
+            </tr>
+            <tr>
+              <td width="20%">In-Progress</td>
+              <td align="left">
+                <amexio-progress-bar [show]="true"
+                                     [infinite]="false"
+                                     type="success"
+                                     [current-value]="10">
+                </amexio-progress-bar>
+              </td>
+            </tr>
+          </table>
+        </amexio-body>
+      </amexio-card>
+    </amexio-column>
+
+  <amexio-column [size] = "6">
+      <amexio-card [footer]="false" [show]="true" [header] = "true">
+        <amexio-header>
+          Issue By Severity
+        </amexio-header>
+        <amexio-body>
+
+          <table width="100%">
+            <tr>
+              <td width="20px">Low</td>
+              <td align="left">
+                 <amexio-progress-bar [show]="true"
+                                     [infinite]="false"
+                                     [current-value]="20"
+                                     [amexio-color]="'amexio-yellow'">
+                </amexio-progress-bar>
+              </td>
+            </tr>
+            <tr>
+              <td width="20px">High</td>
+              <td align="left">
+                <amexio-progress-bar [show]="true"
+                                     [infinite]="false"
+                                     [current-value]="50"
+                                     [amexio-color]="'amexio-black'"
+                >
+
+                </amexio-progress-bar>
+              </td>
+            </tr>
+            <tr>
+              <td width="20px">Medium</td>
+              <td align="left">
+                <amexio-progress-bar [show]="true"
+                                     [infinite]="false"
+                                     [current-value]="30"
+                                     [amexio-color]="'amexio-purple'"
+                >
+
+                </amexio-progress-bar>
+              </td>
+            </tr>
+          </table>
+        </amexio-body>
+      </amexio-card>
+      <br>
+    </amexio-column>
+  </amexio-row>
+  <amexio-row>
+  <amexio-column [size] = "6">
+      <amexio-card [header] = "true" [footer]="false" [show]="true">
+        <amexio-header>
+          Open Issue
+        </amexio-header>
+        <amexio-body>
+          <amexio-checkbox-group name="openissue"
+                           [data-reader]="'response.data'"
+                           [display-field]="'issueName'"
+                           [value-field]="'checked'"
+                           [data]="openIssuedata" >
+          </amexio-checkbox-group>
+            <amexio-text-input name="issuename" [place-holder]="'Issue name'" [has-label]="false">
+            </amexio-text-input>
+            <amexio-button [label]="'Add'" [type]="'warning'"></amexio-button>
+        </amexio-body>
+      </amexio-card>
+    </amexio-column>
+
+  <amexio-column [size] = "6">
+      <amexio-card [header] = "true"[footer]="false" [show]="true">
+        <amexio-header>
+          Customer Feedback
+        </amexio-header>
+        <amexio-body>
+          <amexio-carousel [data]="feedbackData" mode="single" >
+  <ng-template let-feedback amexioTemplate="item">
+    <div style="height: 200px;width: 320px;">
+    {{feedback.content}}
+    </div>
+  </ng-template>
+</amexio-carousel>
+        </amexio-body>
+      </amexio-card>
+    </amexio-column>
+  </amexio-row>

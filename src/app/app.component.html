@@ -1,20 +1,131 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<div *ngIf="hasThemeInit;else themeInitContent">
+  <amexio-nav [enable-side-nav-position]="true" 
+  [title]="'Amexio Component Examples'"
+  [logo]="'assets/images/logos/amexio-logo.png'">
+  <amexio-nav-item position-right
+    [icon]="'fa fa-home fa-fw fa-lg'"
+    [title]="'Home'" 
+    [type]="'link'" 
+    (onNavItemClick)="onClick('http://amexio.org/api/v4.1/index.html#/getting-started')" 
+    style="cursor: pointer;" >
+  </amexio-nav-item>
+  <amexio-nav-item position-right
+    [type]="'link'"
+    [icon]="'fa fa-user-circle fa-fw fa-lg'" 
+    [title]="'John Doe'" 
+    style="cursor: pointer;" 
+    (onNavItemClick)="onUserClick()">
+  </amexio-nav-item>
+  <amexio-nav-item position-right *ngFor="let menus of topMenuData" 
+  [type]="'menu'" 
+  [title]="menus.text"
+  [data]="menus.submenus"
+  [icon]="menus.icon"
+  (onNavItemClick)="externalLink($event)">			
+  </amexio-nav-item>       
+  
+  </amexio-nav>
+  
+  
+  <amexio-row>
+    <amexio-column [size]="'2pt5'" style="padding-top: 68px;">
+      <amexio-side-nav [http-url]="'assets/data/menus/sidebar.json'" 
+                      [http-method]="'get'" 
+                      [height]="'92%'" 
+                      [data-reader]="'data'"
+                      (nodeClick)="routeToLink($event)">
+      </amexio-side-nav>
+    </amexio-column>
+    <amexio-column [size]="'9pt5'">
+      <div class="route-container">
+        <div class="loadingnav" *ngIf="isRouteLoading">Loading&#8230;</div>
+        <router-outlet></router-outlet>
+      </div>
+    </amexio-column>
+  </amexio-row>
+  
+  
+  <amexio-floating-panel [event]="event" [show]="showfloatplanel">
+  <amexio-card >
+    <amexio-body>
+      <div class="floating-theme">
+      <amexio-tab-view  [closable]="false">
+        <amexio-tab title="Material" [active]="true">
+          <div style="height: 350px;overflow-x: auto">
+            <amexio-row *ngFor="let objArray of materialThemeArray" >
+              <ng-container *ngFor="let obj of objArray">
+                <amexio-column style="cursor: pointer" [size]="4"  (click)="themeChange(obj)">
+                  <amexio-image [path]="'assets/images/themematerialicons/'+ obj.link"></amexio-image><br><b>{{obj.themeName}}</b>
+                </amexio-column>
+              </ng-container>
+            </amexio-row>
+          </div>
+        </amexio-tab>
+        <amexio-tab title="Amexio">
+          <div style="height: 350px;overflow-x: auto">
+            <amexio-row *ngFor="let objArray of amexioThemeArray" >
+              <ng-container *ngFor="let obj of objArray">
+                <amexio-column style="cursor: pointer" [size]="4"  (click)="themeChange(obj)">
+                  <amexio-image [path]="'assets/images/themeamexioicon/'+ obj.link"></amexio-image><br><b>{{obj.themeName}}</b>
+                </amexio-column>
+              </ng-container>
+            </amexio-row>
+          </div>
+        </amexio-tab>
+      </amexio-tab-view>
+    </div>
+    </amexio-body>
+  </amexio-card>
+  </amexio-floating-panel>
+  </div>
+  
+  <ng-template #themeInitContent>
+    <style>
+      .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+      .loading-bar {
+        display: inline-block;
+        width: 4px;
+        height: 18px;
+        border-radius: 4px;
+        animation: loading 1s ease-in-out infinite;
+      }
+      .loading-bar:nth-child(1) {
+        background-color: #3498db;
+        animation-delay: 0;
+      }
+      .loading-bar:nth-child(2) {
+        background-color: #c0392b;
+        animation-delay: 0.09s;
+      }
+      .loading-bar:nth-child(3) {
+        background-color: #f1c40f;
+        animation-delay: .18s;
+      }
+      .loading-bar:nth-child(4) {
+        background-color: #27ae60;
+        animation-delay: .27s;
+      }
+      @keyframes loading {
+        0% {
+          transform: scale(1);
+        }
+        20% {
+          transform: scale(1, 2.2);
+        }
+        40% {
+          transform: scale(1);
+        }
+      }
+    </style>
+    <div class="loading">
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+    </div>
+  </ng-template>
+  
