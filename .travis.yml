@@ -33,7 +33,7 @@ after_success:
   - rm -rf demo-amexio/se/v5.12/*
   - cp -rf /home/travis/build/meta-magic/Amexio-theme-Demo/dist/* demo-amexio/se/v5.12/
   - cd demo-amexio/
-  - git demo-amexio/se/v5.12/
+  - git add se/v5.12/
   - git commit -m "${COMMIT}"
   - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git push "https://deepali-arvind:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git" HEAD:master; fi
 cache:
