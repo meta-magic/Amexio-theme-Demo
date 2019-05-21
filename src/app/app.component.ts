@@ -58,7 +58,9 @@ export class AppComponent {
         {"text":"Shopping Portal","link":"http://amexio.org/demo/se/v4/shoppingapp/"},
         {"text":"US Election Results","link":"http://amexio.org/demo/se/v4/pollingapp/"},
         {"text":"Insurance Portal","link":"http://amexio.org/demo/se/v4/digitalBuzaar/"},
-        {"text":"Movie Portal","link":"http://www.amexio.org/tecmflix2"}
+        {"text":"Movie Portal","link":"http://www.amexio.org/tecmflix2"},
+        {"text":"Creative Demo","link":"https://cedemo.amexio.org/#/login"}
+
       ]
     }, {
       "text": "About Us",
