@@ -59,6 +59,7 @@ export class AppComponent {
         {"text":"US Election Results","link":"http://amexio.org/demo/se/v4/pollingapp/"},
         {"text":"Insurance Portal","link":"http://amexio.org/demo/se/v4/digitalBuzaar/"},
         {"text":"Movie Portal","link":"http://www.amexio.org/tecmflix2"},
+        { "text": "NpmStats", "link": "https://www.npmstats.com/" },
         {"text":"Creative Demo","link":"https://cedemo.amexio.org/#/login"}
 
       ]
