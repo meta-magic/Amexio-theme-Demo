@@ -40,7 +40,7 @@ export class AppComponent {
         }, 
         {
           "text": "Amexio API Docs",
-          "link": "http://amexio.org/api/v4.1/index.html#/getting-started"
+          "link": "http://api.amexio.tech/"
         },
         {
           "text": "Amexio Canvas",
