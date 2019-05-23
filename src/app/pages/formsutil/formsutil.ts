@@ -266,7 +266,7 @@ import { FormsModule } from "@angular/forms";
 
 
        <amexio-row>
-         <amexio-column size="6"><h2>Notfication</h2></amexio-column>
+         <amexio-column size="6"><h2>Notification</h2></amexio-column>
        </amexio-row>
        
        <amexio-row>
