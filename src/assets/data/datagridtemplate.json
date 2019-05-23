@@ -32,15 +32,6 @@
         "Payment":"paypal.jpg",
         "Activity":" a mins ago"
       },{
-         "User": "vrushabh kokil",
-         "profile": "vrushabh.jpg",
-          "Date":"19-03-2018",
-        "Usage":6,
-        "usageFromDate":"June 11,2015",
-       "usageToDate":"Jul 10,2015",
-        "Payment":"ebay.png",
-        "Activity":"2 mins ago"
-      },{
         "User": "Dattaram Gawas",
         "profile": "dats.jpg",
          "Date":"19-01-2018",
@@ -58,26 +49,29 @@
        "usageToDate":"Jul 10,2015",
         "Payment":"paypal.jpg",
         "Activity":"a mins ago"
-      },{
-        "User": "sandip mohite",
-        "profile": "sandip.jpg",
-         "Date":"22-02-2018",
-        "Usage":80,
+      },
+      {
+        "User": "Deepali Arvind",
+        "Date":"4-03-2018",
+        "Usage":33,
         "usageFromDate":"June 11,2015",
        "usageToDate":"Jul 10,2015",
-        "Payment":"visa.jpg",
-        "Activity":"8 mins ago"
-      },{
-        "User": "payal Kulkarni",
-         "profile": "payal.jpg",
-         "Date":"1-03-2018",
-        "Usage":83,
-        "usageFromDate":"June 11,2015",
+        "Payment":"paypal.jpg",
+        "Activity":"a mins ago",
+        "profile": "dipali.jpg"
+      },
+      {
+        "name": "Rashmi Thakkar",
+        "name_official": "Rashmi Thakkar",
+        "profile": "rashmi.jpg",
+        "Date":"5-03-2018",
+        "Usage":23,
+        "usageFromDate":"June 1,2015",
        "usageToDate":"Jul 10,2015",
-        "Payment":"masterCard.jpg",
-        "Activity":"9 mins ago"
+        "Payment":"paypal.jpg",
+        "Activity":"a mins ago"
+        
       }
-     
     ]
   }
 }

@@ -386,7 +386,7 @@ import { FormsModule } from "@angular/forms";
         </amexio-column>
 
         <amexio-column [size]="4">
-        <amexio-box border-color ="purple" border="all" [closable]="'true'" padding="true" background-color="purple" box-height="100px" box-width="300px">
+        <amexio-box border-color ="purple" border="all" [closable]="'true'" padding="true" background-color="purple" box-height="100px" box-width="280px">
         <amexio-text-input field-label="Aadhar No" name="name"
                    place-holder="Enter aadhar card no"
                    icon-feedback="true" >
