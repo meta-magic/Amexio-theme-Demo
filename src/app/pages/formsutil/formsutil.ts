@@ -34,7 +34,7 @@ import { FormsModule } from "@angular/forms";
        </amexio-row>
 <amexio-row>
 <amexio-column [size]="12">
-<amexio-toggle [field-label]="'Round Toogle'">
+<amexio-toggle [size]="'medium'" [type]="1">
 </amexio-toggle>
 </amexio-column>
 </amexio-row>
@@ -282,13 +282,17 @@ import { FormsModule } from "@angular/forms";
        </amexio-row>
        
        <amexio-row>
-         <amexio-column size="12">
+      <amexio-column size="12">
+        <amexio-card [header]="true">
+          <amexio-header>
+            Video Player
+          </amexio-header>
+          <amexio-body>
            
-         <amexio-video-player path="http://www.amexio.org/showcaseapp/v3assets/videos/sample_bunny.mp4">
-         
-         </amexio-video-player>
-         </amexio-column>
-       </amexio-row>
+          </amexio-body>
+        </amexio-card>
+      </amexio-column>
+    </amexio-row>
        
        <amexio-row>
          <amexio-column [size]="6">
