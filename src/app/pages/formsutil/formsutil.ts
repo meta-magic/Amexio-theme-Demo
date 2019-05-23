@@ -277,15 +277,6 @@ import { FormsModule } from "@angular/forms";
        <amexio-notification [data]="toggleMsgArrayR" [vertical-position]="'top'" [horizontal-position]="'right'"></amexio-notification>
        <amexio-notification [data]="toggleMsgArrayL" [vertical-position]="'top'" [horizontal-position]="'left'"></amexio-notification>
        
-       <amexio-row>
-         <amexio-column size="6"><h2>Video Player</h2></amexio-column>
-       </amexio-row>
-       
-       <amexio-row>
-         <amexio-column size="12">
-           <amexio-video-player path="http://www.amexio.org/showcaseapp/v3assets/videos/sample_bunny.mp4"></amexio-video-player>
-         </amexio-column>
-       </amexio-row>
        
        <amexio-row>
          <amexio-column [size]="6">
