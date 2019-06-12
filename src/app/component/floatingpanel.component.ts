@@ -17,7 +17,7 @@ import {Component, EventEmitter, Input, OnInit, Output, Inject, ElementRef} from
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'amexio-floating-panel', 
+  selector: 'amexio-floating-panel1', 
   templateUrl: './floatingpanel.component.html'
 })
 
