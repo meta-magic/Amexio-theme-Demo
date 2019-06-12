@@ -84,7 +84,7 @@ export class AppComponent {
             "link": "https://cedemo.amexio.org/amexio-ce-demo-app/index.html#/ce-demo-app"
           },
           {
-            "text": "Components App",
+            "text": "Components App ",
             "link": "https://demo.amexio.org/se/v5.12/index.html#/home",
             "separator": true,
             "separatorHeader": "Standard Edition Apps"
