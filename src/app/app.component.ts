@@ -52,18 +52,57 @@ export class AppComponent {
         }]
       },
       {
-      "text": "Case Studies",
-      "icon": "fa fa-clone fa-fw",
-      "submenus": [
-        {"text":"Shopping Portal","link":"https://sedemo.amexio.org/se/shoppingportal/#/home"},
-        {"text":"US Election Results","link":"https://sedemo.amexio.org/se/us-election/"},
-        {"text":"Insurance Portal","link":"https://sedemo.amexio.org/se/insuranceportal/"},
-        {"text":"Movie Portal","link":"https://cedemo.amexio.org/tecmflix/"},
-        { "text": "NpmStats", "link": "https://www.npmstats.com/" },
-        {"text":"Creative Demo","link":"https://eedemo.amexio.org/#/login"}
-
-      ]
-    }, {
+        "text": "Case Studies",
+        "icon": "fa fa-clone fa-fw",
+        "submenus": [
+          {
+            "text": "Showcase",
+            "link": "https://showcase.amexio.org/#/landingPage-app"
+          },
+          {
+            "text": "Traffic Analysis",
+            "link": "https://eedemo.amexio.org/#/home/dashboard",
+            "separator": true,
+            "separatorHeader": "EE Demo"
+          },
+          {
+            "text": "City Analysis",
+            "link": "https://eedemo.amexio.org/#/home/dashboardtwo"
+          },
+          {
+            "text": "Virtual Scroll",
+            "link": "https://cedemo.amexio.org/Virtual-Scroller/#/sc",
+            "separator": true,
+            "separatorHeader": "CE Demo"
+          },
+          {
+            "text": "TecMFlix",
+            "link": "https://cedemo.amexio.org/tecmflix/"
+          },
+          {
+            "text": "More...",
+            "link": "https://cedemo.amexio.org/amexio-ce-demo-app/index.html#/ce-demo-app"
+          },
+          {
+            "text": "Insurance Portal",
+            "link": "https://sedemo.amexio.org/se/insuranceportal/#/home",
+            "separator": true,
+            "separatorHeader": "SE Demo"
+          },
+          {
+            "text": "Shopping Portal",
+            "link": "https://sedemo.amexio.org/se/shoppingportal/#/home"
+          },
+          {
+            "text": "US Election Results",
+            "link": "https://sedemo.amexio.org/se/us-election/ "
+          },
+          {
+            "text": "NpmStats",
+            "link": "https://www.npmstats.com/"
+          }
+        ]
+      }, {
       "text": "About Us",
       "icon": "fa fa-address-book-o fa-fw",
       "submenus": [{
