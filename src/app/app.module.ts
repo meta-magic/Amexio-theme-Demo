@@ -13,7 +13,7 @@ import {DashboardComponent} from "./pages/dashboardex/dashboardex.component";
 import {SampleFormComponent} from "./pages/sampleformex/sampleformex.component";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { AmexioFloatingPanelComponent } from './component/floatingpanel.component';
+import { AmexioFloatingPanelComponent1 } from './component/floatingpanel.component';
 import { HTTPService } from './service/http.service';
 
 const route: Routes = [
@@ -88,7 +88,7 @@ const route: Routes = [
     AppComponent,
     DashboardComponent,
     SampleFormComponent,
-    AmexioFloatingPanelComponent
+    AmexioFloatingPanelComponent1
   ],
   imports: [
     BrowserAnimationsModule,

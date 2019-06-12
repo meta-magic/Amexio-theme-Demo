@@ -21,7 +21,7 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './floatingpanel.component.html'
 })
 
-export class AmexioFloatingPanelComponent implements OnInit {
+export class AmexioFloatingPanelComponent1 implements OnInit {
 
   @Input('position-top') top : string;
 
